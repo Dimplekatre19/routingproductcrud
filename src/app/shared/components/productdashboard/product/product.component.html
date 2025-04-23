@@ -1,0 +1,11 @@
+<ng-container *ngIf="productObj ; else noProd">
+   
+    <p>This is product with <strong>{{productObj.pname}}</strong> and with status <strong>{{productObj.pstatus}}</strong></p>
+    
+         <button routerLink="edit" mat-raised-button color="primary">Edit</button>
+         <button (click)="onprodRemove(productObj.pid)" mat-raised-button color="warn" class="ml-3">Remove</button>
+    
+</ng-container>
+<ng-template #noProd>
+   <p class="alert alert-info"NO PRODUCT FOUND WITH THIS ID!!!></p>
+</ng-template>
